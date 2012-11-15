@@ -12,7 +12,7 @@ Fragments is a Ruby library to scrape HTML using sample templates. I use it for 
     | HTML | ----> | fragments | ----> | data |
     +------+       +-----------+       +------+
 
-Actually, syntax is <s>very similar to</s> a subset of [Liquid](https://github.com/Shopify/liquid)'s.
+Actually, syntax is <del>very similar to</del> a subset of [Liquid](https://github.com/Shopify/liquid)'s.
 
 Simple example:
 

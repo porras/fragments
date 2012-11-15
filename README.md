@@ -17,7 +17,7 @@ Actually, syntax is <del>very similar to</del> a subset of [Liquid](https://gith
 Simple example:
 
     template = Fragments::Template.new(%q{
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
       <div class="content">
         {{ content }}
       </div>
@@ -29,7 +29,7 @@ Simple example:
         <title>Hello, world</title>
       </head>
       <body>
-        <h1>Hello world</h1>
+        <h1>Hello, world</h1>
         <div class="content">
           Lorem ipsum dolor sit amet...
         </div>
@@ -43,7 +43,7 @@ Simple example:
 If you expect more than one instance of your fragment, you can use `find` instead of `parse`:
 
     template = Fragments::Template.new(%q{
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
       <div class="content">
         {{ content }}
       </div>
@@ -76,7 +76,7 @@ If you expect more than one instance of your fragment, you can use `find` instea
 But in that case you can also simply use Liquid's iterators:
 
     template = Fragments::Template.new(%q{
-      <h1>Products from {{company.name}} </h1>
+      <h1>Products from {{ company.name }} </h1>
       <ul id="products">
         {% for product in products %}
           <li>
@@ -128,9 +128,9 @@ But in that case you can also simply use Liquid's iterators:
 
 ## RSpec/Capybara matchers
 
-(quick and dirty, not very sure about this API; maybe its simpler to have a helper that returns the scraped response, and do plain method calls and assertions)
+(quick and dirty, not very sure about this API; maybe it's simpler to have a helper that returns the scraped response, and do plain method calls and assertions)
 
-Provided you store your fragment templates under `spec/support/fragments/<name>.html.fragment`, you can match against it in your Capybara specs:
+Provided you store your fragment templates under `spec/support/fragments/<name>.html.fragment`, you can match against them in your Capybara specs:
 
     # for using with the second example template
     page.should have_fragment(:product, :count => 2)
